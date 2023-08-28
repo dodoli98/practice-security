@@ -24,6 +24,12 @@ public class HelloController {
     private Long expireTimeMs = 1000 * 60 * 60l;
 
 
+    @PostMapping("/register")
+    public String join() {
+        return "Controller.register";
+    }
+
+
     @PostMapping("/gettoken")
     public ResponseEntity<String> getToken() {
         String token = JwtProvider.createToken("userName", key, expireTimeMs);
